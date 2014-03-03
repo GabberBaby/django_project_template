@@ -1,4 +1,4 @@
-{{ project_name }} Project
+Django project template
 ========================================
 
 About
