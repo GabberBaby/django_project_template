@@ -13,6 +13,14 @@ Prerequisites
 - pip
 - virtualenv (virtualenvwrapper is recommended)
 
+Usage
+-----
+Create a Django project:
+
+mkdir {{ project_name }}
+cd {{ project_name }}
+django-admin.py startproject {{ project_name }} . -e py,rst,example,gitignore --template=https://github.com/GabberBaby/django_project_template/archive/empty_project.zip
+
 Installation
 ------------
 
