@@ -15,11 +15,11 @@ Prerequisites
 
 Usage
 -----
-Create a Django project:
+Create a Django project::
 
-mkdir {{ project_name }}
-cd {{ project_name }}
-django-admin.py startproject {{ project_name }} . -e py,rst,example,gitignore --template=https://github.com/GabberBaby/django_project_template/archive/empty_project.zip
+    mkdir my-website.com
+    cd my-website.com
+    django-admin.py startproject mywebsite . -e py,rst,example,gitignore --template=https://github.com/GabberBaby/django_project_template/archive/empty_project.zip
 
 Installation
 ------------
