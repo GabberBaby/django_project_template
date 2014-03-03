@@ -10,8 +10,7 @@ gettext = lambda s: s
 PROJECT_PATH = path.abspath(path.join(path.dirname(__file__), '..'))
 STATIC_PATH = path.join(PROJECT_PATH, '../static')
 TEMPLATE_PATH = path.join(PROJECT_PATH, '../templates')
-#if db is sqlite uncomment
-#DB_PATH = path.join(PROJECT_PATH, '../{{ project_name }}.db')
+#DB_PATH = path.join(PROJECT_PATH, '../{{ project_name }}.db') if db is sqlite uncomment
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -27,7 +26,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'testdb',                      # Or path to database file if using sqlite3.
+        'NAME': '{{ project_name }}',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'root',
         'PASSWORD': '',
@@ -60,7 +59,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-SECRET_KEY = '1uxqmdke&amp;b$h33yspb1*qoet-y*mqj-35vqdfr8e0dza-q0zwl'
+SECRET_KEY = '{{ secret_key|safe }}'
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -77,9 +76,9 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'project_name.urls'
+ROOT_URLCONF = '{{ project_name }}.urls'
 
-WSGI_APPLICATION = 'project_name.wsgi.application'
+WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
 TEMPLATE_DIRS = TEMPLATE_PATH
 
@@ -94,9 +93,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 )
 
-
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
-
 
 LOGGING = {
     'version': 1,
