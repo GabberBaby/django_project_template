@@ -26,7 +26,7 @@ Installation
 
 To setup a local development environment::
 
-    mkvirtualenv newspa
+    mkvirtualenv {{ project_name }}
     pip install -r requirements.txt
     ./manage.py syncdb --migrate
     ./manage.py runserver
